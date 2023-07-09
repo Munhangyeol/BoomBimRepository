@@ -3,6 +3,7 @@ import 'package:transition/transition.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/screen/screen_guest.dart';
 import 'package:untitled/screen/screen_select.dart';
+import 'package:untitled/screen/screen_search.dart';
 class MapScreen extends StatefulWidget{
   @override
   _MapScreenState createState()=>_MapScreenState();
@@ -34,7 +35,12 @@ class _MapScreenState extends State<MapScreen>{
               children: [
                 InkWell(
                   onTap: () {
-
+                    Navigator.push(
+                        context,
+                        Transition(
+                            child: GuestScreen(),
+                            transitionEffect: TransitionEffect.BOTTOM_TO_TOP)
+                    );
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text('My'),
                     ));
@@ -48,12 +54,7 @@ class _MapScreenState extends State<MapScreen>{
                 InkWell(
                   onTap: () {
 
-                    Navigator.push(
-                        context,
-                        Transition(
-                            child: GuestScreen(),
-                            transitionEffect: TransitionEffect.BOTTOM_TO_TOP)
-                    );
+
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text('Map'),
                     )
@@ -62,16 +63,23 @@ class _MapScreenState extends State<MapScreen>{
                   },
                   child: Icon(
                     Icons.map,
+                    color: Color(0xFFFFE4E4),
                   ),
                 ),
                 InkWell(
                   onTap: () {
+                    Navigator.push(
+                        context,
+                        Transition(
+                            child: SearchScreen(),
+                            transitionEffect: TransitionEffect.BOTTOM_TO_TOP)
+                    );
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text('검색'),
                     ));
                     print("버튼 클릭");
                   },
-                  child: Icon(Icons.search, color: Color(0xFFFFE4E4),),
+                  child: Icon(Icons.search),
                 ),
 
 

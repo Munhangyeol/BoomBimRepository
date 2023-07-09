@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:transition/transition.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/screen/screen_guest.dart';
+import 'package:untitled/screen/screen_map.dart';
 import 'package:untitled/screen/screen_select.dart';
 class SearchScreen extends StatefulWidget{
   @override
@@ -35,6 +36,13 @@ class _SearchScreenState extends State<SearchScreen>{
                 InkWell(
                   onTap: () {
 
+                    Navigator.push(context,
+                        Transition(
+                            child: GuestScreen(),
+                            transitionEffect: TransitionEffect.BOTTOM_TO_TOP)
+
+
+                    );
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text('My'),
                     ));
@@ -50,7 +58,7 @@ class _SearchScreenState extends State<SearchScreen>{
 
                     Navigator.push(context,
                         Transition(
-                            child: GuestScreen(),
+                            child: MapScreen(),
                             transitionEffect: TransitionEffect.BOTTOM_TO_TOP)
 
 
