@@ -62,7 +62,7 @@ class _SearchScreenState extends State<SearchScreen>{
                   },
                   child: Icon(
                     Icons.map,
-                    color: Color(0xFFFFE4E4),),
+                    ),
                 ),
                 InkWell(
                   onTap: () {
@@ -71,7 +71,8 @@ class _SearchScreenState extends State<SearchScreen>{
                     ));
                     print("버튼 클릭");
                   },
-                  child: Icon(Icons.search),
+                  child: Icon(Icons.search,
+                    color: Color(0xFFFFE4E4),),
                 ),
 
 
